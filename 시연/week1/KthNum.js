@@ -34,7 +34,7 @@ function solution(array, commands) {
   //map을 사용했기 때문에 기존 문제에 있는 answer라는 빈 배열을 사용하지 않아도 될 것 같아 삭제해주었습니다
   return commands.map(
     //map함수로 각 command를 돌아주었습니다
-    //배열의 index는 0번부터 시작하므로 i번째에서 자르기 위해 i-1 번째 요소에서 j번째까지 spice를 해주었습니다.
+    //배열의 index는 0번부터 시작하므로 i번째에서 자르기 위해 i-1 번째 요소에서 j번째까지 slice를 해주었습니다.
     //그 후 sort((a,b) => (a -b))로 오름차순으로 정렬한 수 k번째 숫자를 마찬가지로 k-1번째로 요소로 가져왔습니다.
     ([i, j, k]) => array.slice(i - 1, j).sort((a, b) => a - b)[k - 1]
   );
