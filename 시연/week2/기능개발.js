@@ -39,10 +39,9 @@ let speeds = [
 
 function solution(progresses, speeds) {
   let answer = [0];
-  let daysNeeded = progresses.map(
-    (progress, idx) =>
-      //100에서 현재 작업 작업 진도를 뺀 값을 해당 작업의 작업속도로 나눠줘 작업 완성까지 필요한 일수를 배열에 담는다
-      (100 - progress) / speeds[idx]
+  let daysNeeded = progresses.map((progress, idx) =>
+    //100에서 현재 작업 작업 진도를 뺀 값을 해당 작업의 작업속도로 나눠줘 작업 완성까지 필요한 일수를 배열에 담는다
+    Math.ceil((100 - progress) / speeds[idx])
   );
   //개발 완성까지 필요한 최대 일수를 일단 작업에 필요한 일수 배열(daysNeeded)의 첫 번째 숫자로 설정해준다
   let maxDay = daysNeeded[0];
