@@ -60,19 +60,19 @@ class MinHeap {
 }
 
 function solution(scoville, K) {
+  //섞은 횟수 0으로 할당
   var answer = 0;
   //객체 생성
   const heap = new MinHeap();
-  //scoville 배열의 요소들을 넣어줌
+  //forEach 문으로 순회하며 scoville 배열의 요소들을 heap에 넣어줌
   scoville.forEach((item) => heap.push(item));
   while (heap.size() >= 2) {
     if (heap.peek() < K) {
       if (heap.size() > 0) {
-        //스코빌 지수가 가장 작은 값
+        //스코빌 지수가 가장 작은 값 꺼냄
         const first = heap.pop();
-        //스코빌 지수가 두번째로 작은 값
+        //스코빌 지수가 두번째로 작은 값 꺼냄
         const second = heap.pop();
-
         //섞은 음식의 스코필 지수 넣어줌
         heap.push(first + second * 2);
         //섞은 횟수 1씩 증가
