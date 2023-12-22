@@ -20,6 +20,7 @@ const k = [2, 3, 4];
 
 function solution(number, k) {
   const arr = [];
+
   for (let i = 0; i < number.length; i++) {
     while (arr.length > 0 && arr[arr.length - 1] < number[i] && k > 0) {
       //현재 숫자보다 큰 수가 나올때까지 최대 k번을 반복합니다
@@ -31,7 +32,7 @@ function solution(number, k) {
     arr.push(number[i]);
   }
   arr.splice(number.length - k, k);
-  //남은 k만큼 arr의 뒤에서 제거해줍니다
+  //splice를 활용해 남은 k만큼 arr의 뒤에서 제거해줍니다
   return arr.join("");
-  //arr의 요소들을 join("")을 이용해 string 값으로 변환해줍니다
+  //arr의 숫자를 join("")을 이용해 string 값으로 변환해줍니다
 }
